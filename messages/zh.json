@@ -1,0 +1,73 @@
+{
+  "site": {
+    "name": "KIAA 夏令营 2026",
+    "footer": "KIAA 夏令营与研讨会 2026"
+  },
+  "navigation": {
+    "speakers": "讲者",
+    "agenda": "日程",
+    "application": "报名",
+    "contact": "联系"
+  },
+  "localeSwitch": {
+    "en": "EN",
+    "zh": "中"
+  },
+  "application": {
+    "title": "报名注册",
+    "subtitle": "请选择您报名的项目类型并填写相关信息。",
+    "deadline": "报名截止日期：2026年5月11日",
+    "schoolOnly": "仅参加暑期学校",
+    "schoolOnlyDesc": "2026年7月20日至24日 · 原行星盘与行星形成系列讲座",
+    "schoolAndWorkshop": "暑期学校 + 讨论班",
+    "schoolAndWorkshopDesc": "2026年7月20日至8月28日 · 讲座、研究课题与结业汇报",
+    "fullName": "姓名",
+    "idNumber": "身份证号",
+    "idNumberHint": "用于办理出入校门凭证",
+    "phone": "手机号",
+    "phoneHint": "用于办理饭卡",
+    "institution": "学校/单位",
+    "email": "电子邮箱",
+    "dietary": "饮食习惯",
+    "dietaryHalal": "清真饮食",
+    "dietaryRegular": "普通饮食",
+    "hotelBooking": "酒店代订",
+    "hotelBookingDesc": "是否需要代订富驿时尚酒店？（约350元/标准间，可住两人平摊费用）",
+    "hotelYes": "需要代订",
+    "hotelNo": "不需要",
+    "fileUpload": "上传申请材料（.zip）",
+    "fileUploadSchoolHint": "文件名格式：暑期学校申请材料-学校名-学生姓名.zip · 须包含简历和成绩单",
+    "fileUploadWorkshopHint": "文件名格式：暑期学校和讨论班申请材料-学校名-学生姓名.zip · 须包含简历、成绩单及一页英文研究陈述。可选：TOEFL/IELTS成绩",
+    "refereeName": "推荐人姓名",
+    "refereeEmail": "推荐人邮箱",
+    "refereeEmailHint": "系统将向此邮箱发送推荐信上传链接",
+    "fundingUpload": "经费资助申请（可选）",
+    "fundingUploadHint": "如需申请交通或住宿资助，请上传说明文件",
+    "submit": "提交报名",
+    "submitting": "提交中…",
+    "successTitle": "报名已提交",
+    "successMessage": "感谢您的报名，我们将审核后与您联系。",
+    "dropzoneText": "将文件拖放到此处，或点击浏览",
+    "dropzoneActive": "松手放下文件",
+    "fileTooLarge": "文件大小不能超过 20 MB",
+    "invalidFilename": "文件名不符合要求的格式",
+    "required": "此项为必填项",
+    "invalidEmail": "请输入有效的电子邮箱地址",
+    "invalidPhone": "请输入有效的手机号码",
+    "quotaSchool": "暑期学校名额：不超过80人",
+    "quotaWorkshop": "讨论班名额：12-15人",
+    "feeNote": "暑期学校不收取注册费，统一提供餐食。交通费和住宿费由学员自行承担。"
+  },
+  "referee": {
+    "title": "推荐信上传",
+    "subtitle": "请为申请人上传推荐信。",
+    "fileUpload": "上传推荐信（PDF 或 .zip）",
+    "fileUploadHint": "文件名格式：讨论班-学校名-学生姓名",
+    "submit": "上传推荐信",
+    "submitting": "上传中…",
+    "successTitle": "上传成功",
+    "successMessage": "感谢您，推荐信已收到。",
+    "invalidToken": "此链接无效或已过期。",
+    "alreadyUploaded": "该申请的推荐信已上传。"
+  }
+}

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+
+# Build
+*.tsbuildinfo
+.turbo/
+
+# Test
+test-results/
+playwright-report/
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env*.local
+
+# Editor / OS
+.DS_Store
+.eslintcache
+*.log

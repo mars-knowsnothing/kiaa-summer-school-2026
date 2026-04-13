@@ -1,0 +1,73 @@
+{
+  "site": {
+    "name": "KIAA Summer School 2026",
+    "footer": "KIAA Summer School & Workshop 2026"
+  },
+  "navigation": {
+    "speakers": "Speakers",
+    "agenda": "Agenda",
+    "application": "Registration",
+    "contact": "Contact"
+  },
+  "localeSwitch": {
+    "en": "EN",
+    "zh": "中"
+  },
+  "application": {
+    "title": "Registration",
+    "subtitle": "Please select the program you are registering for and fill in the required information.",
+    "deadline": "Registration deadline: May 11, 2026",
+    "schoolOnly": "Summer School Only",
+    "schoolOnlyDesc": "July 20–24, 2026 · Lectures on protoplanetary disks and planet formation",
+    "schoolAndWorkshop": "Summer School + Workshop",
+    "schoolAndWorkshopDesc": "July 20 – August 28, 2026 · Lectures, research projects, and final presentations",
+    "fullName": "Full Name",
+    "idNumber": "ID Number",
+    "idNumberHint": "For campus access credentials",
+    "phone": "Phone Number",
+    "phoneHint": "For meal card registration",
+    "institution": "Institution",
+    "email": "Email",
+    "dietary": "Dietary Requirements",
+    "dietaryHalal": "Halal meals required",
+    "dietaryRegular": "Regular meals",
+    "hotelBooking": "Hotel Booking",
+    "hotelBookingDesc": "Need to book Fuyi Fashion Hotel? (~¥350/standard room, shared by two)",
+    "hotelYes": "Yes, please book",
+    "hotelNo": "No, thank you",
+    "fileUpload": "Upload Application Materials (.zip)",
+    "fileUploadSchoolHint": "Filename format: 暑期学校申请材料-SchoolName-YourName.zip · Must contain resume and transcripts",
+    "fileUploadWorkshopHint": "Filename format: 暑期学校和讨论班申请材料-SchoolName-YourName.zip · Must contain resume, transcripts, and 1-page English research statement. Optional: TOEFL/IELTS scores",
+    "refereeName": "Referee Name",
+    "refereeEmail": "Referee Email",
+    "refereeEmailHint": "An upload link for the recommendation letter will be sent to this address",
+    "fundingUpload": "Funding Request (optional)",
+    "fundingUploadHint": "Upload a justification document if you need travel/accommodation funding",
+    "submit": "Submit Registration",
+    "submitting": "Submitting…",
+    "successTitle": "Registration Submitted",
+    "successMessage": "Thank you for registering. We will review your registration and get back to you.",
+    "dropzoneText": "Drag & drop your file here, or click to browse",
+    "dropzoneActive": "Drop the file here",
+    "fileTooLarge": "File size must be under 20 MB",
+    "invalidFilename": "Filename does not match the required format",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number",
+    "quotaSchool": "Enrollment: up to 80 students",
+    "quotaWorkshop": "Enrollment: 12–15 students",
+    "feeNote": "No registration fee. Meals provided. Travel and accommodation at your own expense."
+  },
+  "referee": {
+    "title": "Recommendation Letter Upload",
+    "subtitle": "Please upload your recommendation letter for the applicant.",
+    "fileUpload": "Upload Recommendation Letter (PDF or .zip)",
+    "fileUploadHint": "Filename format: 讨论班-SchoolName-StudentName",
+    "submit": "Upload Letter",
+    "submitting": "Uploading…",
+    "successTitle": "Letter Uploaded",
+    "successMessage": "Thank you. The recommendation letter has been received.",
+    "invalidToken": "This link is invalid or has expired.",
+    "alreadyUploaded": "A recommendation letter has already been uploaded for this application."
+  }
+}

@@ -2,8 +2,7 @@
 
 ## Prerequisites
 
-- Docker
-- Nginx (on the host machine)
+- Docker & Docker Compose
 - A configured Supabase project
 
 ## 1. Prepare Environment Variables
@@ -33,143 +32,65 @@ Generate a session secret:
 openssl rand -hex 32
 ```
 
-## 2. Build Docker Image
-
-`NEXT_PUBLIC_*` variables are baked into the client bundle at build time, so they must be passed as build args:
+## 2. Build and Start
 
 ```bash
-source .env
-
-docker build \
-  --build-arg NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL \
-  --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY \
-  -t kiaa-summer-school .
+docker compose up -d --build
 ```
 
-## 3. Run Container
+This will:
+1. Build the Next.js application image (with `NEXT_PUBLIC_*` as build args)
+2. Start the Next.js container (`app`, port 3000, internal only)
+3. Start the Nginx container (port 80, exposed to host)
 
-Mount the `.env` file to inject server-side secrets at runtime:
+Verify:
 
 ```bash
-docker run -d \
-  --name kiaa-summer-school \
-  --restart unless-stopped \
-  --env-file .env \
-  -p 127.0.0.1:3000:3000 \
-  kiaa-summer-school
+docker compose ps
+curl -I http://127.0.0.1
 ```
 
-Verify it's running:
+Then visit `http://<your-server-ip>` in a browser.
 
-```bash
-docker ps
-curl -I http://127.0.0.1:3000
+## Project Structure
+
+```
+docker-compose.yml          # Compose orchestration
+Dockerfile                  # Next.js multi-stage build
+nginx/default.conf          # Nginx reverse proxy config
+.env                        # Environment variables (not committed)
 ```
 
-## 4. Configure Nginx Reverse Proxy
+### How Networking Works
 
-Create `/etc/nginx/sites-available/kiaa-summer-school`:
-
-```nginx
-server {
-    listen 80;
-    server_name your-domain.com;
-
-    # Redirect HTTP to HTTPS
-    return 301 https://$host$request_uri;
-}
-
-server {
-    listen 443 ssl http2;
-    server_name your-domain.com;
-
-    ssl_certificate     /etc/letsencrypt/live/your-domain.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/your-domain.com/privkey.pem;
-
-    # Security headers
-    add_header X-Frame-Options SAMEORIGIN;
-    add_header X-Content-Type-Options nosniff;
-    add_header X-XSS-Protection "1; mode=block";
-
-    # Gzip
-    gzip on;
-    gzip_types text/plain text/css application/json application/javascript text/xml image/svg+xml;
-
-    location / {
-        proxy_pass http://127.0.0.1:3000;
-        proxy_http_version 1.1;
-
-        proxy_set_header Host              $host;
-        proxy_set_header X-Real-IP         $remote_addr;
-        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-
-        # WebSocket support (for Next.js HMR in dev; harmless in prod)
-        proxy_set_header Upgrade    $http_upgrade;
-        proxy_set_header Connection "upgrade";
-    }
-
-    # Cache static assets
-    location /_next/static/ {
-        proxy_pass http://127.0.0.1:3000;
-        expires 365d;
-        add_header Cache-Control "public, immutable";
-    }
-}
+```
+Browser → :80 → [nginx container] → http://app:3000 → [Next.js container]
 ```
 
-Enable the site and reload:
-
-```bash
-sudo ln -sf /etc/nginx/sites-available/kiaa-summer-school /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx
-```
-
-## 5. HTTPS with Let's Encrypt (Optional)
-
-If you haven't set up SSL yet:
-
-```bash
-sudo apt install certbot python3-certbot-nginx   # Debian/Ubuntu
-sudo certbot --nginx -d your-domain.com
-```
-
-Certbot will automatically update the Nginx config and set up auto-renewal.
+Both containers are on the same Docker Compose network. Nginx uses the container name `app` (not `127.0.0.1`) to reach Next.js.
 
 ## Common Operations
 
 **View logs:**
 
 ```bash
-docker logs -f kiaa-summer-school
+docker compose logs -f          # all services
+docker compose logs -f app      # Next.js only
+docker compose logs -f nginx    # Nginx only
 ```
 
 **Restart after updating `.env`:**
 
 ```bash
-docker restart kiaa-summer-school
+docker compose up -d --build    # rebuild with new env and restart
 ```
 
-**Rebuild and redeploy:**
+**Stop all services:**
 
 ```bash
-source .env
-docker build \
-  --build-arg NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL \
-  --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY \
-  -t kiaa-summer-school .
-
-docker stop kiaa-summer-school && docker rm kiaa-summer-school
-
-docker run -d \
-  --name kiaa-summer-school \
-  --restart unless-stopped \
-  --env-file .env \
-  -p 127.0.0.1:3000:3000 \
-  kiaa-summer-school
+docker compose down
 ```
 
 **Access admin console:**
 
-Open `https://your-domain.com/console` and log in with the credentials from `.env`.
+Open `http://<your-server-ip>/console` and log in with the credentials from `.env`.

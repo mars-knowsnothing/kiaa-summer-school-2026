@@ -18,7 +18,7 @@
     "subtitle": "Please select the program you are registering for and fill in the required information.",
     "deadline": "Registration deadline: May 11, 2026",
     "schoolOnly": "Summer School Only",
-    "schoolOnlyDesc": "July 20–24, 2026 · Lectures on protoplanetary disks and planet formation",
+    "schoolOnlyDesc": "July 20–24, 2026 · Submit resume and transcripts (.zip)",
     "schoolAndWorkshop": "Summer School + Workshop",
     "schoolAndWorkshopDesc": "July 20 – August 28, 2026 · Submit resume, transcripts, and 1-page English research statement (.zip)",
     "fullName": "Full Name",
@@ -36,7 +36,7 @@
     "dietaryHalal": "Halal meals required",
     "dietaryRegular": "Regular meals",
     "hotelBooking": "Hotel Booking",
-    "hotelBookingDesc": "Need to book Fuyi Fashion Hotel? (~¥350/standard room, shared by two)",
+    "hotelBookingDesc": "A limited number of rooms at a negotiated rate are available (Fuyi Fashion Hotel, near PKU Southwest Gate). Please indicate in your application.",
     "hotelYes": "Yes, please book",
     "hotelNo": "No, thank you",
     "fileUpload": "Upload Application Materials (.zip)",
@@ -46,7 +46,7 @@
     "refereeEmail": "Referee Email",
     "refereeEmailHint": "Please ask your referee to send the recommendation letter to pkuastronomy@pku.edu.cn before May 11, 2026",
     "fundingUpload": "Funding Request (optional)",
-    "fundingUploadHint": "Upload a justification document if you need travel/accommodation funding",
+    "fundingUploadHint": "Workshop participants who need funding support should state the reason when registering",
     "submit": "Submit Registration",
     "submitting": "Submitting…",
     "successTitle": "Registration Submitted",
@@ -58,9 +58,9 @@
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email address",
     "invalidPhone": "Please enter a valid phone number",
-    "quotaSchool": "Enrollment: up to 80 students",
+    "quotaSchool": "Enrollment: summer school total up to 80 students",
     "quotaWorkshop": "Enrollment: 12–15 students",
-    "feeNote": "No registration fee. Meals provided. Travel and accommodation at your own expense."
+    "feeNote": "No registration fee. Meals provided. Travel and accommodation are in principle at your own expense (advisors may provide funding)."
   },
   "referee": {
     "title": "Recommendation Letter Upload",

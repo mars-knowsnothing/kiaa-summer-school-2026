@@ -42,11 +42,11 @@ const homeCopy = {
     zh: "2026年7月20日至8月28日（共六周）"
   },
   subtitle: {
-    en: "A bilingual academic program on protoplanetary disks and planet formation.",
+    en: "For senior undergraduates and graduate students in astronomy, physics, and planetary science.",
     zh: "面向对象：天文、物理、行星科学相关专业的高年级本科生和研究生"
   },
   description: {
-    en: "The program brings together lecturers, scientific committee members, and students for a six-week summer school and workshop series at Peking University.",
+    en: "Protoplanetary disks are dust-rich gas disks surrounding newborn stars and the birthplaces of planets. With the discovery of thousands of exoplanets and high-resolution observations revealing ubiquitous fine-scale substructures in protoplanetary disks, our understanding of disk physics and planet formation is undergoing a leap forward. To advance China\u2019s development and talent cultivation in this frontier field, the Kavli Institute for Astronomy and Astrophysics at Peking University will host the Protoplanetary Disks and Planet Formation Summer School and Workshop from July 20 to August 28, 2026.",
     zh: "原行星盘是围绕新生恒星周围的富含尘埃的气体盘，也是行星形成的场所。随着数以千计系外行星的发现，以及高分辨率观测捕捉到原行星盘中普遍存在的各类精细\u201C亚结构\u201D，人们对盘物理和行星形成过程的认识正在发生飞跃。为了推动我国在这一前沿领域的长足发展和人才队伍建设，北京大学科维理天文与天体物理研究所将于2026年7月20日至8月28日举办\u201C原行星盘与行星形成\u201D暑期学校及讨论班。"
   }
 } as const satisfies HomeCopy;

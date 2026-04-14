@@ -106,7 +106,7 @@ export const agendaWorkshop: AgendaWorkshop = {
     zh: "7月25日 - 8月28日"
   },
   description: {
-    en: "The lecturers and other participating faculty will offer research topics related to protoplanetary disks and planet formation. Students will be matched with topics through a two-way selection process.",
+    en: "Lecturers and other participating faculty will offer related research topics, and students will be matched through a two-way selection process. In principle, each student (or a group of two) selects one topic. Regular academic exchanges will be arranged, and summary presentations will be held at the end of week six, aiming to explore new research directions and produce results.",
     zh: "主讲教师和其他参会教师将提供相关科研课题，与学生进行双向选择。原则上每个学生（或2人小组）选择一个课题。期间安排日常学术交流，并在第六周末进行汇报总结，旨在开拓科研方向并产出成果。"
   },
   items: [

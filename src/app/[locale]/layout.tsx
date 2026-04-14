@@ -39,10 +39,7 @@ export default async function LocaleLayout({children, params}: LocaleLayoutProps
         <SiteHeader
           locale={locale}
           navLabels={{
-            speakers: navigation("speakers"),
-            agenda: navigation("agenda"),
-            application: navigation("application"),
-            contact: navigation("contact"),
+            registration: navigation("application"),
           }}
           localeSwitchLabel={localeSwitch(alternateLocale)}
           siteName={site("name")}

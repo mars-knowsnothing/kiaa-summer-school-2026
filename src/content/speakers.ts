@@ -15,11 +15,11 @@ export const speakerRoleLabels: Record<SpeakerRole, LocalizedText> = {
     zh: "主讲教师"
   },
   scientific_committee: {
-    en: "Scientific committee",
+    en: "Scientific Committee",
     zh: "科学委员会"
   },
   local_committee: {
-    en: "Local committee",
+    en: "Local Committee",
     zh: "地方委员会"
   }
 };
@@ -202,5 +202,13 @@ export const speakers = [
     },
     role: "local_committee",
     sortOrder: 20
+  },
+  {
+    name: {
+      en: "Jing Xie",
+      zh: "谢静"
+    },
+    role: "local_committee",
+    sortOrder: 21
   }
 ] as const satisfies readonly Speaker[];

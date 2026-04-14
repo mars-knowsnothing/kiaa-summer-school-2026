@@ -28,7 +28,7 @@ export const agendaSchool: AgendaSchool = {
   },
   dateRange: {
     en: "July 20–24, 2026",
-    zh: "2026年7月20日至24日"
+    zh: "7月20日 - 24日"
   },
   topics: [
     {
@@ -41,7 +41,7 @@ export const agendaSchool: AgendaSchool = {
     },
     {
       en: "Numerical simulation methods of (magneto-)hydrodynamics, N-body, and radiative transfer, and their applications in this field",
-      zh: "（磁）流体、N体和辐射转移的数值模拟方法及其在本领域中的应用"
+      zh: "（磁）流体，N体和辐射转移的数值模拟方法及其在本领域中的应用"
     }
   ],
   languageNote: {
@@ -49,8 +49,8 @@ export const agendaSchool: AgendaSchool = {
     zh: "授课语言：中英文结合"
   },
   lecturersNote: {
-    en: "Lecturers (sorted by pinyin, continuously updating)",
-    zh: "主讲教师（拼音排序，持续更新中）"
+    en: "Lecturers (sorted by pinyin)",
+    zh: "主讲教师（按拼音排序）"
   },
   lecturers: [
     {
@@ -99,15 +99,15 @@ export const agendaSchool: AgendaSchool = {
 export const agendaWorkshop: AgendaWorkshop = {
   title: {
     en: "Workshop (Weeks 2–6)",
-    zh: "讨论班（第二至第六周）"
+    zh: "讨论班（二至六周）"
   },
   dateRange: {
     en: "July 25 – August 28, 2026",
-    zh: "2026年7月25日至8月28日"
+    zh: "7月25日 - 8月28日"
   },
   description: {
-    en: "The lecturers listed above and other participating faculty (to be confirmed) will offer a range of research topics related to protoplanetary disks and planet formation. Students admitted to the five-week workshop will be matched with topics through a two-way selection process.",
-    zh: "上述主讲教师和其他参会教师（名单待定）将提供同原行星盘与行星形成有关的若干科研课题，与参加后续五周活动的同学进行双向选择。"
+    en: "The lecturers and other participating faculty will offer research topics related to protoplanetary disks and planet formation. Students will be matched with topics through a two-way selection process.",
+    zh: "主讲教师和其他参会教师将提供相关科研课题，与学生进行双向选择。原则上每个学生（或2人小组）选择一个课题。期间安排日常学术交流，并在第六周末进行汇报总结，旨在开拓科研方向并产出成果。"
   },
   items: [
     {
@@ -116,8 +116,8 @@ export const agendaWorkshop: AgendaWorkshop = {
         zh: "课题选择"
       },
       text: {
-        en: "In principle each student selects one topic; under special circumstances two students may form a group to work on one topic together, then begin the research process.",
-        zh: "原则上每个学生选择一个课题，特殊情况下可以2个学生作为一个小组共同选择一个课题，随后开启研究进程。"
+        en: "In principle each student (or a group of two) selects one topic, then begins the research process.",
+        zh: "原则上每个学生（或2人小组）选择一个课题。"
       }
     },
     {
@@ -127,7 +127,7 @@ export const agendaWorkshop: AgendaWorkshop = {
       },
       text: {
         en: "Regular academic exchange and discussion sessions will be arranged throughout the program.",
-        zh: "期间，我们将安排一定的日常学术交流和讨论环节。"
+        zh: "期间安排日常学术交流。"
       }
     },
     {
@@ -136,8 +136,8 @@ export const agendaWorkshop: AgendaWorkshop = {
         zh: "汇报总结"
       },
       text: {
-        en: "Summary presentations will be held at the end of week six. We hope participants will use this opportunity to explore new research directions.",
-        zh: "在第六周末进行汇报总结。我们希望参会的同学能以此为契机开拓新的科研方向。"
+        en: "Summary presentations will be held at the end of week six, aiming to explore new research directions and produce results.",
+        zh: "在第六周末进行汇报总结，旨在开拓科研方向并产出成果。"
       }
     }
   ]

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {notFound} from "next/navigation";
 
-import {HeroScene} from "@/components/home/hero-scene";
 import {agendaSchool, agendaWorkshop} from "@/content/agenda";
 import {localized, localizedHomeContent, site} from "@/content/site";
+import {speakerRoleLabels, speakerRoleOrder, speakers, type Speaker} from "@/content/speakers";
 import {locales, type Locale} from "@/i18n/routing";
 
 type LocalePageProps = {
@@ -20,130 +20,113 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
   const home = localizedHomeContent(locale);
 
   return (
-    <section className="homepage-shell mx-auto w-full max-w-6xl px-6 py-14 sm:py-16 lg:py-20">
-      {/* Hero area */}
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:items-start">
-        <div className="space-y-8">
-          <div className="space-y-5">
-            <p className="section-eyebrow">
-              {home.eyebrow}
-            </p>
-            <h1 className="section-title max-w-3xl text-4xl sm:text-6xl xl:text-7xl">
-              {home.title}
-            </h1>
-            <p className="glass-btn inline-flex !cursor-default !text-xs !tracking-[0.28em] uppercase">
-              {home.dates}
-            </p>
-            <p className="max-w-2xl text-lg leading-8 text-[var(--muted)]">
-              {home.subtitle}
-            </p>
-            <p className="max-w-2xl text-base leading-7 text-[var(--muted-soft)]">
-              {home.description}
-            </p>
-          </div>
+    <section className="mx-auto w-full max-w-6xl space-y-12 px-6 py-14 sm:py-16 lg:py-20">
 
-          {/* Action buttons */}
-          <div className="flex flex-wrap gap-3">
-            <Link href={`/${locale}${site.links.speakers.href}`} className="glass-btn-primary">
-              {localized(site.links.speakers.label, locale)}
-            </Link>
-            <Link href={`/${locale}${site.links.agenda.href}`} className="glass-btn">
-              {localized(site.links.agenda.label, locale)}
-            </Link>
-            <Link href={`/${locale}${site.links.contact.href}`} className="glass-btn">
-              {localized(site.links.contact.label, locale)}
-            </Link>
-          </div>
+      {/* ── Hero ── */}
+      <div className="space-y-5">
+        <p className="section-eyebrow">{home.eyebrow}</p>
+        <h1 className="section-title text-3xl sm:text-4xl lg:text-[2.8rem] lg:leading-tight xl:text-[3.2rem]">
+          {home.title}
+        </h1>
+        <p className="glass-btn inline-flex !cursor-default !text-xs !tracking-[0.28em] uppercase">
+          {home.dates}
+        </p>
+        <p className="max-w-3xl text-lg leading-8 text-[var(--muted)]">
+          {home.subtitle}
+        </p>
+        <p className="max-w-3xl text-base leading-7 text-[var(--muted-soft)]">
+          {home.description}
+        </p>
+        <p className="text-2xl font-bold text-[var(--accent)] sm:text-3xl">
+          {localized(site.deadline, locale)}
+        </p>
+        <div className="flex flex-wrap gap-3 pt-2">
+          <Link href={`/${locale}/registration`} className="glass-btn-primary">
+            {locale === "zh" ? "立即报名" : "Register Now"}
+          </Link>
         </div>
-
-        {/* Right column: 3D scene */}
-        <HeroScene cards={home.scene} />
       </div>
 
-      {/* ── Full-width info panel ── */}
-      <div className="glass-panel mt-12 p-6 sm:p-8">
-        <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_1fr_1.4fr]">
+      {/* ── Hero Banner ── */}
+      <div className="glass-panel overflow-hidden !p-0">
+        <img
+          src="/hero-banner.png"
+          srcSet="/hero-banner.png 1x, /hero-banner@2x.png 2x"
+          alt="KIAA Summer School & Workshop 2026"
+          width={1920}
+          height={634}
+          className="h-auto w-full object-cover"
+          fetchPriority="high"
+          decoding="async"
+        />
+      </div>
 
-          {/* Column 1: Event Details */}
+      {/* ── Key Info Panel (3 columns) ── */}
+      <div className="glass-panel p-6 sm:p-8">
+        <div className="relative z-10 grid gap-8 lg:grid-cols-3">
+
+          {/* Col 1: Dates */}
           <div className="space-y-5">
             <p className="section-eyebrow">{localized(site.sections.details, locale)}</p>
-
             <div className="space-y-4">
               <div>
                 <p className="text-lg font-semibold text-[var(--foreground)]">
-                  {localized(site.schoolDates, locale)}
+                  {localized(agendaSchool.dateRange, locale)}
                 </p>
                 <p className="mt-0.5 text-sm text-[var(--muted)]">
-                  {localized(site.schoolCheckIn, locale)}
+                  {localized(agendaSchool.title, locale)}
                 </p>
               </div>
               <div>
                 <p className="text-lg font-semibold text-[var(--foreground)]">
-                  {localized(site.workshopDate, locale)}
+                  {localized(agendaWorkshop.dateRange, locale)}
                 </p>
                 <p className="mt-0.5 text-sm text-[var(--muted)]">
-                  {localized(site.workshopCheckIn, locale)}
+                  {localized(agendaWorkshop.title, locale)}
                 </p>
               </div>
             </div>
-
-            <Link
-              href={`/${locale}${site.links.contact.href}`}
-              className="glass-btn !px-4 !py-2 !text-xs"
-            >
-              {localized(site.checkInfoBtn, locale)}
-            </Link>
           </div>
 
-          {/* Column 2: Location + Contacts */}
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <svg className="h-4 w-4 flex-shrink-0 text-[var(--accent)]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
-                </svg>
-                <p className="section-eyebrow">{localized(site.sections.location, locale)}</p>
-              </div>
-              <p className="text-sm leading-6 text-[var(--foreground)]">
-                {localized(site.host, locale)}
-              </p>
+          {/* Col 2: Location */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-2">
+              <svg className="h-4 w-4 flex-shrink-0 text-[var(--accent)]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
+              </svg>
+              <p className="section-eyebrow">{localized(site.sections.location, locale)}</p>
             </div>
-
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <svg className="h-4 w-4 flex-shrink-0 text-[var(--accent)]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/>
-                </svg>
-                <p className="section-eyebrow">{localized(site.sections.contacts, locale)}</p>
-              </div>
-              <p className="text-sm font-medium text-[var(--foreground)]">
-                {site.contacts.map((c) => localized(c.name, locale)).join(" / ")}
-              </p>
-              <p className="text-xs text-[var(--muted)]">
-                {site.contacts.map((c) => localized(c.role, locale)).join(" / ")}
-              </p>
-            </div>
-          </div>
-
-          {/* Column 3: Overview + Agenda */}
-          <div className="space-y-4">
-            <p className="section-eyebrow">{localized(site.sections.overview, locale)}</p>
-            <p className="text-sm leading-6 text-[var(--muted)]">
-              {home.description}
+            <p className="text-sm leading-6 text-[var(--foreground)]">
+              {localized(site.host, locale)}
             </p>
+            <p className="text-sm leading-6 text-[var(--muted)]">
+              {localized(site.venue, locale)}
+            </p>
+          </div>
 
-            <div className="space-y-1.5">
-              {[agendaSchool, agendaWorkshop].map((section) => (
-                <div
-                  key={localized(section.title, locale)}
-                  className="flex items-baseline gap-4 text-sm"
-                >
-                  <span className="w-28 flex-shrink-0 font-medium text-[var(--foreground)]">
-                    {localized(section.title, locale)}
-                  </span>
-                  <span className="text-[var(--muted)]">
-                    {localized(section.dateRange, locale)}
-                  </span>
+          {/* Col 3: Contacts */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-2">
+              <svg className="h-4 w-4 flex-shrink-0 text-[var(--accent)]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <p className="section-eyebrow">{localized(site.sections.contacts, locale)}</p>
+            </div>
+            <div className="space-y-3">
+              {site.contacts.map((contact) => (
+                <div key={contact.email}>
+                  <p className="text-sm font-medium text-[var(--foreground)]">
+                    {localized(contact.name, locale)}
+                    <span className="ml-2 text-xs text-[var(--muted-soft)]">
+                      {localized(contact.role, locale)}
+                    </span>
+                  </p>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="text-sm text-[var(--accent)] underline decoration-[var(--accent)]/30 underline-offset-4 hover:decoration-[var(--accent)]/60"
+                  >
+                    {contact.email}
+                  </a>
                 </div>
               ))}
             </div>
@@ -151,6 +134,171 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
 
         </div>
       </div>
+
+      {/* ── Summer School (Week 1) ── */}
+      <article className="glass-panel p-6 sm:p-8">
+        <div className="relative z-10 flex flex-col gap-3 border-b border-black/[0.06] pb-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-[var(--accent)]">
+              {localized(agendaSchool.dateRange, locale)}
+            </p>
+            <h2 className="mt-2 text-2xl font-bold text-[var(--foreground)]">
+              {localized(agendaSchool.title, locale)}
+            </h2>
+          </div>
+          <p className="text-sm text-[var(--muted)]">
+            {localized(agendaSchool.languageNote, locale)}
+          </p>
+        </div>
+
+        <div className="relative z-10 mt-6 space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted-soft)]">
+            {locale === "zh" ? "讲授内容" : "Topics"}
+          </p>
+          <ol className="mt-3 grid gap-3">
+            {agendaSchool.topics.map((topic, i) => (
+              <li key={i} className="glass-card flex items-start gap-4 p-4">
+                <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--accent)]/10 text-xs font-bold text-[var(--accent)]">
+                  {i + 1}
+                </span>
+                <p className="text-sm leading-6 text-[var(--foreground)]">
+                  {localized(topic, locale)}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="relative z-10 mt-8 space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted-soft)]">
+            {localized(agendaSchool.lecturersNote, locale)}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2.5">
+            {agendaSchool.lecturers.map((lecturer, i) => (
+              <span key={i} className="glass-card inline-flex items-center gap-1.5 px-3.5 py-2 text-sm">
+                <span className="font-medium text-[var(--foreground)]">
+                  {localized(lecturer.name, locale)}
+                </span>
+                <span className="text-[var(--muted-soft)]">·</span>
+                <span className="text-xs text-[var(--muted)]">
+                  {localized(lecturer.affiliation, locale)}
+                </span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </article>
+
+      {/* ── Workshop (Weeks 2–6) ── */}
+      <article className="glass-panel p-6 sm:p-8">
+        <div className="relative z-10 border-b border-black/[0.06] pb-5">
+          <p className="text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-[var(--accent)]">
+            {localized(agendaWorkshop.dateRange, locale)}
+          </p>
+          <h2 className="mt-2 text-2xl font-bold text-[var(--foreground)]">
+            {localized(agendaWorkshop.title, locale)}
+          </h2>
+        </div>
+
+        <div className="relative z-10 mt-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted-soft)]">
+            {locale === "zh" ? "形式与内容" : "Format & Content"}
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[var(--muted)]">
+            {localized(agendaWorkshop.description, locale)}
+          </p>
+        </div>
+
+        <div className="relative z-10 mt-6 grid gap-4 sm:grid-cols-3">
+          {agendaWorkshop.items.map((item, i) => (
+            <div key={i} className="glass-card p-5">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--accent)]/10">
+                  {i === 0 ? (
+                    <svg className="h-3.5 w-3.5 text-[var(--accent)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 00-3-3.87" />
+                      <path d="M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                  ) : i === 1 ? (
+                    <svg className="h-3.5 w-3.5 text-[var(--accent)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                  ) : (
+                    <svg className="h-3.5 w-3.5 text-[var(--accent)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" y1="13" x2="8" y2="13" />
+                      <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                  )}
+                </span>
+                <p className="text-sm font-semibold text-[var(--foreground)]">
+                  {localized(item.label, locale)}
+                </p>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+                {localized(item.text, locale)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      {/* ── Speakers & Committees ── */}
+      <div className="space-y-6">
+        <p className="section-eyebrow">{locale === "zh" ? "讲者与委员会" : "Speakers & Committees"}</p>
+        {speakerRoleOrder.map((role) => {
+          const entries: Speaker[] = speakers
+            .filter((s) => s.role === role)
+            .sort((a, b) => a.sortOrder - b.sortOrder);
+
+          return (
+            <article key={role} className="glass-panel p-6">
+              <div className="relative z-10 border-b border-black/[0.06] pb-4">
+                <h2 className="text-xl font-semibold text-[var(--foreground)]">
+                  {localized(speakerRoleLabels[role], locale)}
+                </h2>
+              </div>
+              <div className="relative z-10 mt-5 flex flex-wrap gap-2.5">
+                {entries.map((speaker) => (
+                  <span
+                    key={`${role}-${speaker.sortOrder}`}
+                    className="glass-card inline-flex items-center gap-1.5 px-3.5 py-2 text-sm"
+                  >
+                    <span className="font-medium text-[var(--foreground)]">
+                      {localized(speaker.name, locale)}
+                    </span>
+                    {speaker.note && (
+                      <>
+                        <span className="text-[var(--muted-soft)]">·</span>
+                        <span className="text-xs text-[var(--muted)]">
+                          {localized(speaker.note, locale)}
+                        </span>
+                      </>
+                    )}
+                  </span>
+                ))}
+              </div>
+            </article>
+          );
+        })}
+
+        {/* Host organizations */}
+        <article className="glass-panel p-6">
+          <div className="relative z-10 border-b border-black/[0.06] pb-4">
+            <h2 className="text-xl font-semibold text-[var(--foreground)]">
+              {locale === "zh" ? "主办单位" : "Host Organizations"}
+            </h2>
+          </div>
+          <div className="relative z-10 mt-5 space-y-2 text-sm text-[var(--foreground)]">
+            <p>{locale === "zh" ? "北京大学物理学院" : "School of Physics, Peking University"}</p>
+            <p>{locale === "zh" ? "北京大学科维理天文与天体物理研究所" : "Kavli Institute for Astronomy and Astrophysics, Peking University"}</p>
+          </div>
+        </article>
+      </div>
+
     </section>
   );
 }

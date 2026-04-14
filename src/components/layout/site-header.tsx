@@ -8,10 +8,7 @@ import {AnimatePresence, motion} from "framer-motion";
 import type {Locale} from "@/i18n/routing";
 
 type NavLabels = {
-  speakers: string;
-  agenda: string;
-  application: string;
-  contact: string;
+  registration: string;
 };
 
 type SiteHeaderProps = {
@@ -34,10 +31,7 @@ export function getLocaleSwitchHref(pathname: string, locale: Locale): string {
 }
 
 const navLinks = [
-  {key: "speakers" as const, href: "/speakers"},
-  {key: "agenda" as const, href: "/agenda"},
-  {key: "application" as const, href: "/registration"},
-  {key: "contact" as const, href: "/contact"},
+  {key: "registration" as const, href: "/registration"},
 ];
 
 export function SiteHeader({

@@ -38,16 +38,16 @@ const homeCopy = {
     zh: "原行星盘与行星形成暑期学校及讨论班"
   },
   dates: {
-    en: "July 20 - August 28, 2026",
-    zh: "2026年7月20日 - 8月28日"
+    en: "July 20 – August 28, 2026",
+    zh: "2026年7月20日至8月28日（共六周）"
   },
   subtitle: {
     en: "A bilingual academic program on protoplanetary disks and planet formation.",
-    zh: "聚焦原行星盘与行星形成的双语学术活动。"
+    zh: "面向对象：天文、物理、行星科学相关专业的高年级本科生和研究生"
   },
   description: {
     en: "The program brings together lecturers, scientific committee members, and students for a six-week summer school and workshop series at Peking University.",
-    zh: "该项目汇聚讲者、科学委员会和学生，在北京大学开展为期六周的暑期学校与讨论班。"
+    zh: "原行星盘是围绕新生恒星周围的富含尘埃的气体盘，也是行星形成的场所。随着数以千计系外行星的发现，以及高分辨率观测捕捉到原行星盘中普遍存在的各类精细\u201C亚结构\u201D，人们对盘物理和行星形成过程的认识正在发生飞跃。为了推动我国在这一前沿领域的长足发展和人才队伍建设，北京大学科维理天文与天体物理研究所将于2026年7月20日至8月28日举办\u201C原行星盘与行星形成\u201D暑期学校及讨论班。"
   }
 } as const satisfies HomeCopy;
 
@@ -99,31 +99,31 @@ export const site = {
   dates: homeCopy.dates,
   schoolDates: {
     en: "July 20 – August 28",
-    zh: "7月20日 – 8月28日"
+    zh: "7月20日至8月28日"
   },
   schoolCheckIn: {
-    en: "Check-in 20 – 25",
-    zh: "7月20–25日报到"
+    en: "Check-in: morning of July 20",
+    zh: "7月20日上午：报到"
   },
   workshopDate: {
-    en: "August 8, 2026",
-    zh: "2026年8月8日"
+    en: "August 29, 2026",
+    zh: "2026年8月29日"
   },
   workshopCheckIn: {
-    en: "Check-in Aug. 28",
-    zh: "8月28日报到"
+    en: "End date: August 29",
+    zh: "8月29日：结束"
   },
   checkIn: {
     en: "Check-in begins on the morning of July 20, 2026.",
-    zh: "报到时间为2026年7月20日上午。"
+    zh: "7月20日上午：报到"
   },
   venue: {
     en: "Kavli Institute for Astronomy and Astrophysics, Peking University, 5 Yiheyuan Road, Haidian District, Beijing",
-    zh: "北京市海淀区颐和园路5号，北京大学科维理天文与天体物理研究所"
+    zh: "北京市海淀区颐和园路5号 北京大学科维理研究所"
   },
   host: {
     en: "School of Physics and Kavli Institute for Astronomy and Astrophysics, Peking University",
-    zh: "北京大学物理学院、北京大学科维理天文与天体物理研究所"
+    zh: "北京大学物理学院，北京大学科维理天文与天体物理研究所"
   },
   sections: {
     overview: {
@@ -142,6 +142,10 @@ export const site = {
       en: "Contacts",
       zh: "联系信息"
     }
+  },
+  deadline: {
+    en: "Registration deadline: May 11, 2026",
+    zh: "报名截止时间：2026年5月11日"
   },
   checkInfoBtn: {
     en: "Check info",

@@ -50,7 +50,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
         {/* Content */}
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
           <div className="flex min-h-[70vh] flex-col justify-center py-20 sm:py-28 lg:py-32">
-            <div className="max-w-3xl space-y-6">
+            <div className="max-w-4xl space-y-6">
               <p className="text-[0.7rem] font-medium uppercase tracking-[0.4em] text-[#4ec9b0]/90">
                 {home.eyebrow}
               </p>

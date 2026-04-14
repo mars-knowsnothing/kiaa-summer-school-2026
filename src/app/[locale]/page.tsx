@@ -37,9 +37,9 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
         />
 
         {/* Layered overlays for depth */}
-        <div className="absolute inset-0 bg-[#070e1a]/75" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070e1a] via-transparent to-[#070e1a]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070e1a]/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[#1a1a1c]/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1c] via-transparent to-[#1a1a1c]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1c]/60 via-transparent to-transparent" />
 
         {/* Subtle grain texture */}
         <div
@@ -51,7 +51,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
           <div className="flex min-h-[70vh] flex-col justify-center py-20 sm:py-28 lg:py-32">
             <div className="max-w-3xl space-y-6">
-              <p className="text-[0.7rem] font-medium uppercase tracking-[0.4em] text-sky-400/90">
+              <p className="text-[0.7rem] font-medium uppercase tracking-[0.4em] text-[#4ec9b0]/90">
                 {home.eyebrow}
               </p>
 
@@ -80,7 +80,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
               <div className="flex flex-wrap gap-4 pt-3">
                 <Link
                   href={`/${locale}/registration`}
-                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0d1b2e] transition-all duration-300 hover:shadow-[0_0_32px_rgba(255,255,255,0.2)]"
+                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#1a1a1c] transition-all duration-300 hover:shadow-[0_0_32px_rgba(255,255,255,0.2)]"
                 >
                   {locale === "zh" ? "立即报名" : "Register Now"}
                   <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

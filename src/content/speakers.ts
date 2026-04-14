@@ -197,18 +197,10 @@ export const speakers = [
   },
   {
     name: {
-      en: "Min Sun",
-      zh: "孙敏"
-    },
-    role: "local_committee",
-    sortOrder: 20
-  },
-  {
-    name: {
       en: "Jing Xie",
       zh: "谢静"
     },
     role: "local_committee",
-    sortOrder: 21
+    sortOrder: 20
   }
 ] as const satisfies readonly Speaker[];

@@ -286,10 +286,10 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
           </div>
         </article>
 
-        {/* ── Speakers & Committees ── */}
+        {/* ── Organizers ── */}
         <div className="space-y-6">
-          <p className="section-eyebrow">{locale === "zh" ? "讲者与委员会" : "Speakers & Committees"}</p>
-          {speakerRoleOrder.map((role) => {
+          <p className="section-eyebrow">{locale === "zh" ? "主办方" : "Organizers"}</p>
+          {speakerRoleOrder.filter((r) => r !== "lecturer").map((role) => {
             const entries: Speaker[] = speakers
               .filter((s) => s.role === role)
               .sort((a, b) => a.sortOrder - b.sortOrder);

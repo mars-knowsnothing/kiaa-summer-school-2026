@@ -122,8 +122,8 @@ export const site = {
     zh: "北京市海淀区颐和园路5号 北京大学科维理研究所"
   },
   host: {
-    en: "School of Physics and Kavli Institute for Astronomy and Astrophysics, Peking University",
-    zh: "北京大学物理学院，北京大学科维理天文与天体物理研究所"
+    en: "Kavli Institute for Astronomy and Astrophysics, Peking University",
+    zh: "北京大学科维理天文与天体物理研究所"
   },
   sections: {
     overview: {

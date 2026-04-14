@@ -392,64 +392,6 @@ a {
    Page-specific
    ═══════════════════════════════════════════════════ */
 
-/* Homepage hero glow */
-.homepage-shell {
-  position: relative;
-}
-
-.homepage-shell::before {
-  content: "";
-  position: absolute;
-  inset: -4rem 10% auto -6rem;
-  height: 30rem;
-  pointer-events: none;
-  background: radial-gradient(ellipse, rgba(46, 138, 184, 0.08), transparent 60%);
-  filter: blur(40px);
-  z-index: -1;
-}
-
-/* Hero scene container */
-.hero-scene {
-  min-height: 34rem;
-}
-
-.hero-scene__card {
-  position: absolute;
-  width: min(14rem, 48%);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  padding: 1.1rem;
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.50);
-  overflow: hidden;
-}
-
-.hero-scene__card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.65), transparent);
-  pointer-events: none;
-}
-
-.hero-scene__card--top {
-  top: 11%;
-  left: 6%;
-}
-
-.hero-scene__card--bottom {
-  right: 6%;
-  bottom: 12%;
-}
-
 /* Glass selected state for type cards */
 .glass-card-selected {
   border-color: rgba(46, 138, 184, 0.40) !important;
@@ -496,23 +438,6 @@ a {
     --glass-radius-sm: 14px;
   }
 
-  .hero-scene {
-    min-height: 30rem;
-  }
-
-  .hero-scene__card {
-    width: min(13rem, 56%);
-  }
-
-  .hero-scene__card--top {
-    top: 10%;
-    left: 4%;
-  }
-
-  .hero-scene__card--bottom {
-    right: 4%;
-    bottom: 10%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

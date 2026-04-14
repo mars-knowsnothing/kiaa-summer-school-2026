@@ -11,8 +11,12 @@ const MAX_FILE_SIZE = 20 * 1024 * 1024; // 20 MB
 
 // ---------- shared base ----------
 
+export const genderOptions = ["male", "female"] as const;
+export type Gender = (typeof genderOptions)[number];
+
 const baseFields = {
   fullName: z.string().trim().min(1),
+  gender: z.enum(genderOptions),
   idNumber: z.string().trim().min(1),
   phone: z.string().trim().min(1),
   email: z.string().trim().email(),

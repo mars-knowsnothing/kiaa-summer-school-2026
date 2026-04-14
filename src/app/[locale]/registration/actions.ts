@@ -90,6 +90,7 @@ export async function submitRegistration(
 
   // --- 4. Insert into registrations table ---
   const jsonData: Record<string, unknown> = {
+    gender: data.gender,
     id_number: data.idNumber,
     is_halal: data.isHalal,
     hotel_needed: data.hotelNeeded,

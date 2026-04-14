@@ -126,15 +126,25 @@ export function ApplicationForm({locale}: ApplicationFormProps) {
         >
           <div className="relative z-10 grid gap-5 sm:grid-cols-2">
             <TextInput name="fullName" label={t("fullName")} required error={result?.fieldErrors?.fullName} />
-            <TextInput name="institution" label={t("institution")} required error={result?.fieldErrors?.institution} />
+            <RadioGroup
+              name="gender"
+              label={t("gender")}
+              hint={t("genderHint")}
+              options={[
+                {value: "male", label: t("genderMale")},
+                {value: "female", label: t("genderFemale")},
+              ]}
+              defaultValue="male"
+            />
           </div>
 
           <div className="relative z-10 grid gap-5 sm:grid-cols-2">
+            <TextInput name="institution" label={t("institution")} required error={result?.fieldErrors?.institution} />
             <TextInput name="email" label={t("email")} type="email" required error={result?.fieldErrors?.email} />
-            <TextInput name="phone" label={t("phone")} hint={t("phoneHint")} required error={result?.fieldErrors?.phone} />
           </div>
 
-          <div className="relative z-10">
+          <div className="relative z-10 grid gap-5 sm:grid-cols-2">
+            <TextInput name="phone" label={t("phone")} hint={t("phoneHint")} required error={result?.fieldErrors?.phone} />
             <TextInput name="idNumber" label={t("idNumber")} hint={t("idNumberHint")} required error={result?.fieldErrors?.idNumber} />
           </div>
 

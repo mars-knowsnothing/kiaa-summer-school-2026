@@ -169,14 +169,6 @@ export const speakers = [
   },
   {
     name: {
-      en: "Min Sun",
-      zh: "孙敏"
-    },
-    role: "local_committee",
-    sortOrder: 16
-  },
-  {
-    name: {
       en: "Ruobing Dong",
       zh: "董若冰"
     },

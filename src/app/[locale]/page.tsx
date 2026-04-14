@@ -114,7 +114,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
                     {localized(agendaSchool.dateRange, locale)}
                   </p>
                   <p className="mt-0.5 text-sm text-[var(--muted)]">
-                    {localized(agendaSchool.title, locale)}
+                    {locale === "zh" ? "（第一周，可单独报名）" : "(Week 1, can register separately)"}
                   </p>
                 </div>
                 <div>

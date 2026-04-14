@@ -20,6 +20,11 @@ coverage/
 .env.local
 .env*.local
 
+# SSL certificates
+nginx/ssl/*.crt
+nginx/ssl/*.key
+nginx/ssl/*.pem
+
 # Editor / OS
 .DS_Store
 .eslintcache

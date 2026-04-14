@@ -37,7 +37,7 @@ export default async function SpeakersPage({params}: LocalePageProps) {
 
           return (
             <article key={role} className="glass-panel p-6">
-              <div className="relative z-10 flex flex-col gap-2 border-b border-black/[0.06] pb-4 sm:flex-row sm:items-end sm:justify-between">
+              <div className="relative z-10 flex flex-col gap-2 border-b border-white/[0.06] pb-4 sm:flex-row sm:items-end sm:justify-between">
                 <h2 className="text-2xl font-semibold">{localized(speakerRoleLabels[role], locale)}</h2>
               </div>
               <div className="relative z-10 mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

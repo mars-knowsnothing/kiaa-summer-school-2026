@@ -258,7 +258,7 @@ function TypeCard({
       type="button"
       onClick={onClick}
       className={`glass-card-specular flex cursor-pointer flex-col gap-2 p-5 text-left transition-all duration-200 ${
-        selected ? "glass-card-selected" : "hover:border-black/10"
+        selected ? "glass-card-selected" : "hover:border-white/10"
       }`}
     >
       <p className="relative z-10 text-lg font-semibold">{title}</p>

@@ -177,7 +177,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
 
         {/* ── Summer School (Week 1) ── */}
         <article className="glass-panel p-6 sm:p-8">
-          <div className="relative z-10 flex flex-col gap-3 border-b border-black/[0.06] pb-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="relative z-10 flex flex-col gap-3 border-b border-white/[0.06] pb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-[var(--accent)]">
                 {localized(agendaSchool.dateRange, locale)}
@@ -231,7 +231,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
 
         {/* ── Workshop (Weeks 2–6) ── */}
         <article className="glass-panel p-6 sm:p-8">
-          <div className="relative z-10 border-b border-black/[0.06] pb-5">
+          <div className="relative z-10 border-b border-white/[0.06] pb-5">
             <p className="text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-[var(--accent)]">
               {localized(agendaWorkshop.dateRange, locale)}
             </p>
@@ -296,7 +296,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
 
             return (
               <article key={role} className="glass-panel p-6">
-                <div className="relative z-10 border-b border-black/[0.06] pb-4">
+                <div className="relative z-10 border-b border-white/[0.06] pb-4">
                   <h2 className="text-xl font-semibold text-[var(--foreground)]">
                     {localized(speakerRoleLabels[role], locale)}
                   </h2>
@@ -327,7 +327,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
 
           {/* Host organizations */}
           <article className="glass-panel p-6">
-            <div className="relative z-10 border-b border-black/[0.06] pb-4">
+            <div className="relative z-10 border-b border-white/[0.06] pb-4">
               <h2 className="text-xl font-semibold text-[var(--foreground)]">
                 {locale === "zh" ? "主办单位" : "Host Organizations"}
               </h2>

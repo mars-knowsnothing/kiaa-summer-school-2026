@@ -35,7 +35,7 @@ export default async function AgendaPage({params}: LocalePageProps) {
           ═══════════════════════════════════════════ */}
       <article className="glass-panel p-6 sm:p-8">
         {/* Section header */}
-        <div className="relative z-10 flex flex-col gap-3 border-b border-black/[0.06] pb-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="relative z-10 flex flex-col gap-3 border-b border-white/[0.06] pb-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-[var(--accent)]">
               {localized(agendaSchool.dateRange, locale)}
@@ -97,7 +97,7 @@ export default async function AgendaPage({params}: LocalePageProps) {
           ═══════════════════════════════════════════ */}
       <article className="glass-panel p-6 sm:p-8">
         {/* Section header */}
-        <div className="relative z-10 border-b border-black/[0.06] pb-5">
+        <div className="relative z-10 border-b border-white/[0.06] pb-5">
           <p className="text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-[var(--accent)]">
             {localized(agendaWorkshop.dateRange, locale)}
           </p>

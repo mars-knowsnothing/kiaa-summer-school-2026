@@ -70,8 +70,8 @@ export function SiteHeader({
                 href={`/${locale}${link.href}`}
                 className={`rounded-full px-3.5 py-1.5 transition-all duration-200 ${
                   isActive
-                    ? "bg-black/[0.06] text-[var(--foreground)]"
-                    : "text-[var(--muted)] hover:bg-black/[0.04] hover:text-[var(--foreground)]"
+                    ? "bg-white/[0.08] text-[var(--foreground)]"
+                    : "text-[var(--muted)] hover:bg-white/[0.05] hover:text-[var(--foreground)]"
                 }`}
               >
                 {navLabels[link.key]}
@@ -95,17 +95,17 @@ export function SiteHeader({
           className="flex flex-col items-center justify-center gap-[5px] p-1.5 md:hidden"
         >
           <span
-            className={`block h-[1.5px] w-5 rounded-full bg-[var(--foreground)]/70 transition-transform duration-200 ${
+            className={`block h-[1.5px] w-5 rounded-full bg-white/70 transition-transform duration-200 ${
               mobileOpen ? "translate-y-[6.5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-[1.5px] w-5 rounded-full bg-[var(--foreground)]/70 transition-opacity duration-200 ${
+            className={`block h-[1.5px] w-5 rounded-full bg-white/70 transition-opacity duration-200 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-[1.5px] w-5 rounded-full bg-[var(--foreground)]/70 transition-transform duration-200 ${
+            className={`block h-[1.5px] w-5 rounded-full bg-white/70 transition-transform duration-200 ${
               mobileOpen ? "-translate-y-[6.5px] -rotate-45" : ""
             }`}
           />
@@ -120,7 +120,7 @@ export function SiteHeader({
             animate={{height: "auto", opacity: 1}}
             exit={{height: 0, opacity: 0}}
             transition={{duration: 0.25, ease: "easeInOut"}}
-            className="overflow-hidden border-t border-black/[0.04] md:hidden"
+            className="overflow-hidden border-t border-white/[0.06] md:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-0.5 px-6 py-3">
               {navLinks.map((link) => (
@@ -128,7 +128,7 @@ export function SiteHeader({
                   key={link.key}
                   href={`/${locale}${link.href}`}
                   onClick={closeMobile}
-                  className="rounded-[var(--glass-radius-xs)] px-3.5 py-2.5 text-sm text-[var(--muted)] transition hover:bg-black/[0.04] hover:text-[var(--foreground)]"
+                  className="rounded-[var(--glass-radius-xs)] px-3.5 py-2.5 text-sm text-[var(--muted)] transition hover:bg-white/[0.05] hover:text-[var(--foreground)]"
                 >
                   {navLabels[link.key]}
                 </Link>
@@ -139,7 +139,7 @@ export function SiteHeader({
                   closeMobile();
                   router.push(localeSwitchHref);
                 }}
-                className="mt-1 rounded-[var(--glass-radius-xs)] border border-black/[0.06] px-3.5 py-2.5 text-left text-sm font-medium text-[var(--muted)] transition hover:bg-black/[0.04] hover:text-[var(--foreground)]"
+                className="mt-1 rounded-[var(--glass-radius-xs)] border border-white/[0.08] px-3.5 py-2.5 text-left text-sm font-medium text-[var(--muted)] transition hover:bg-white/[0.05] hover:text-[var(--foreground)]"
               >
                 {localeSwitchLabel}
               </button>

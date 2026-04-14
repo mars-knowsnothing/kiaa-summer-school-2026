@@ -10,11 +10,11 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 const STATUS_COLORS: Record<string, string> = {
-  submitted: "bg-blue-100 text-blue-700",
-  under_review: "bg-amber-100 text-amber-700",
-  approved: "bg-emerald-100 text-emerald-700",
-  rejected: "bg-red-100 text-red-700",
-  draft: "bg-gray-100 text-gray-600",
+  submitted: "bg-blue-500/15 text-blue-300",
+  under_review: "bg-amber-500/15 text-amber-300",
+  approved: "bg-emerald-500/15 text-emerald-300",
+  rejected: "bg-red-500/15 text-red-300",
+  draft: "bg-white/[0.06] text-[var(--muted)]",
 };
 
 type Props = {
@@ -76,7 +76,7 @@ export function DashboardClient({registrations}: Props) {
           <div className="overflow-x-auto">
             <table className="relative z-10 w-full text-left text-sm">
               <thead>
-                <tr className="border-b border-black/[0.06]">
+                <tr className="border-b border-white/[0.06]">
                   <th className="px-4 py-3 font-semibold text-[var(--muted-soft)]">Name</th>
                   <th className="px-4 py-3 font-semibold text-[var(--muted-soft)]">Email</th>
                   <th className="px-4 py-3 font-semibold text-[var(--muted-soft)]">Phone</th>
@@ -147,7 +147,7 @@ function RegistrationRow({
   return (
     <>
       <tr
-        className="cursor-pointer border-b border-black/[0.03] transition-colors hover:bg-black/[0.02]"
+        className="cursor-pointer border-b border-white/[0.04] transition-colors hover:bg-white/[0.03]"
         onClick={handleToggle}
       >
         <td className="px-4 py-3 font-medium text-[var(--foreground)]">
@@ -157,7 +157,7 @@ function RegistrationRow({
         <td className="px-4 py-3 text-[var(--muted)]">{row.applicant_phone}</td>
         <td className="px-4 py-3 text-[var(--muted)]">{row.institution}</td>
         <td className="px-4 py-3">
-          <span className="rounded-full bg-black/[0.04] px-2.5 py-1 text-xs font-medium text-[var(--foreground)]">
+          <span className="rounded-full bg-white/[0.06] px-2.5 py-1 text-xs font-medium text-[var(--foreground)]">
             {TYPE_LABELS[row.registration_type] ?? row.registration_type}
           </span>
         </td>
@@ -180,7 +180,7 @@ function RegistrationRow({
       </tr>
       {isExpanded && (
         <tr>
-          <td colSpan={7} className="bg-black/[0.01] px-4 py-4">
+          <td colSpan={7} className="bg-white/[0.02] px-4 py-4">
             <div className="grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
               {Object.entries(row.data ?? {}).map(([key, value]) => {
                 const isFilePath = FILE_PATH_KEYS.includes(key);

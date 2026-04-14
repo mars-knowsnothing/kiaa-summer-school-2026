@@ -161,14 +161,6 @@ export const speakers = [
   },
   {
     name: {
-      en: "Xian Chen",
-      zh: "陈弦"
-    },
-    role: "local_committee",
-    sortOrder: 15
-  },
-  {
-    name: {
       en: "Ruobing Dong",
       zh: "董若冰"
     },
@@ -177,7 +169,7 @@ export const speakers = [
       zh: "主席"
     },
     role: "local_committee",
-    sortOrder: 16
+    sortOrder: 15
   },
   {
     name: {

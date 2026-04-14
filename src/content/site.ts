@@ -55,7 +55,7 @@ export const site = {
   home: {
     eyebrow: {
       en: "KIAA Summer School 2026",
-      zh: "KIAA 夏令营 2026"
+      zh: "KIAA 暑期学校 2026"
     },
     copy: homeCopy,
     scene: [
@@ -92,7 +92,7 @@ export const site = {
   title: homeCopy.title,
   shortTitle: {
     en: "KIAA Summer School 2026",
-    zh: "KIAA 夏令营 2026"
+    zh: "KIAA 暑期学校 2026"
   },
   subtitle: homeCopy.subtitle,
   description: homeCopy.description,

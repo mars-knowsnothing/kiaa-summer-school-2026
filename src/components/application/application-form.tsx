@@ -201,6 +201,7 @@ export function ApplicationForm({locale}: ApplicationFormProps) {
                     label={t("refereeEmail")}
                     type="email"
                     hint={t("refereeEmailHint")}
+                    hintClassName="text-xs font-medium text-amber-400"
                     required
                     error={result?.fieldErrors?.refereeEmail}
                   />
@@ -272,6 +273,7 @@ function TextInput({
   name,
   label,
   hint,
+  hintClassName,
   type = "text",
   required,
   error,
@@ -279,6 +281,7 @@ function TextInput({
   name: string;
   label: string;
   hint?: string;
+  hintClassName?: string;
   type?: string;
   required?: boolean;
   error?: string;
@@ -296,7 +299,7 @@ function TextInput({
         required={required}
         className={`glass-input ${error ? "glass-input--error" : ""}`}
       />
-      {hint && <p className="text-xs text-[var(--muted-soft)]">{hint}</p>}
+      {hint && <p className={hintClassName ?? "text-xs text-[var(--muted-soft)]"}>{hint}</p>}
       {error && <p className="text-xs text-red-400">{error}</p>}
     </div>
   );

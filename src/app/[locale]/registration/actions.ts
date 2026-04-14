@@ -19,6 +19,7 @@ export async function submitRegistration(
   const raw = {
     applicationType: formData.get("applicationType"),
     fullName: formData.get("fullName"),
+    gender: formData.get("gender"),
     idNumber: formData.get("idNumber"),
     phone: formData.get("phone"),
     email: formData.get("email"),

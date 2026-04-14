@@ -116,6 +116,10 @@ export const speakers = [
       en: "Xue-Ning Bai",
       zh: "白雪宁"
     },
+    note: {
+      en: "Tsinghua University",
+      zh: "清华大学"
+    },
     role: "scientific_committee",
     sortOrder: 11
   },
@@ -123,6 +127,10 @@ export const speakers = [
     name: {
       en: "Ruobing Dong",
       zh: "董若冰"
+    },
+    note: {
+      en: "Peking University",
+      zh: "北京大学"
     },
     role: "scientific_committee",
     sortOrder: 12
@@ -133,8 +141,8 @@ export const speakers = [
       zh: "龙凤"
     },
     note: {
-      en: "chair",
-      zh: "主席"
+      en: "Peking University · chair",
+      zh: "北京大学 · 主席"
     },
     role: "scientific_committee",
     sortOrder: 13
@@ -145,8 +153,8 @@ export const speakers = [
       zh: "王力乐"
     },
     note: {
-      en: "co-chair",
-      zh: "副主席"
+      en: "Peking University · co-chair",
+      zh: "北京大学 · 副主席"
     },
     role: "scientific_committee",
     sortOrder: 14

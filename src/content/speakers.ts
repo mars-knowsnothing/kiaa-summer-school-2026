@@ -177,7 +177,7 @@ export const speakers = [
       zh: "主席"
     },
     role: "local_committee",
-    sortOrder: 17
+    sortOrder: 16
   },
   {
     name: {
@@ -185,12 +185,20 @@ export const speakers = [
       zh: "龙凤"
     },
     role: "local_committee",
-    sortOrder: 18
+    sortOrder: 17
   },
   {
     name: {
       en: "He Sun",
       zh: "孙赫"
+    },
+    role: "local_committee",
+    sortOrder: 18
+  },
+  {
+    name: {
+      en: "Min Sun",
+      zh: "孙敏"
     },
     role: "local_committee",
     sortOrder: 19

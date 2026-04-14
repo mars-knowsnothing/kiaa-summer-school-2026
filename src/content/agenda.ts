@@ -23,8 +23,8 @@ export type AgendaWorkshop = {
 
 export const agendaSchool: AgendaSchool = {
   title: {
-    en: "Summer School (Week 1)",
-    zh: "暑期学校（第一周）"
+    en: "Summer School (Week 1, can register separately)",
+    zh: "暑期学校（第一周，可单独报名）"
   },
   dateRange: {
     en: "July 20–24, 2026",

@@ -35,7 +35,7 @@ export type HomeContent = {
 const homeCopy = {
   title: {
     en: "KIAA Summer School & Workshop 2026",
-    zh: "原行星盘与行星形成暑期学校及讨论班"
+    zh: "行星形成与星周盘研究生暑期学校\n行星形成与星周盘本科生暑期学校\n行星形成与星周盘讨论班"
   },
   dates: {
     en: "July 20 – August 28, 2026",

@@ -55,8 +55,23 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
                 {home.eyebrow}
               </p>
 
-              <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.4rem]">
-                {home.title}
+              <h1 className="font-bold leading-[1.1] tracking-tight text-white">
+                {home.title.includes("\n") ? (
+                  home.title.split("\n").map((line, i, arr) => (
+                    <span
+                      key={i}
+                      className={`block text-2xl sm:text-3xl lg:text-4xl xl:text-[2.8rem] ${
+                        i === 0 ? "" : i === arr.length - 1 ? "mt-3 text-white/65" : "mt-3 text-white/80"
+                      }`}
+                    >
+                      {line}
+                    </span>
+                  ))
+                ) : (
+                  <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.4rem]">
+                    {home.title}
+                  </span>
+                )}
               </h1>
 
               <div className="flex flex-wrap items-center gap-4">

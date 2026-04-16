@@ -91,6 +91,9 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
               <p className="pt-2 text-2xl font-bold tracking-tight text-amber-400 sm:text-3xl">
                 {localized(site.deadline, locale)}
               </p>
+              <p className="text-sm text-white/50">
+                {localized(site.deadlineNote, locale)}
+              </p>
 
               <div className="flex flex-wrap gap-4 pt-3">
                 <Link

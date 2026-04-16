@@ -144,8 +144,12 @@ export const site = {
     }
   },
   deadline: {
-    en: "Registration deadline: May 22, 2026",
-    zh: "报名截止时间：2026年5月22日"
+    en: "Registration deadline: May 15, 2026",
+    zh: "报名截止时间：2026年5月15日"
+  },
+  deadlineNote: {
+    en: "Results will be announced around May 22",
+    zh: "5月22日左右通知报名结果"
   },
   checkInfoBtn: {
     en: "Check info",

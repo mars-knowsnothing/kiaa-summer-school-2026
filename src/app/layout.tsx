@@ -12,7 +12,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "KIAA Summer School & Workshop 2026",
+  title: "Protoplanetary Disks and Planet Formation",
   description: "Bilingual website for the 2026 KIAA summer school and workshop."
 };
 

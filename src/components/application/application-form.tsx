@@ -175,10 +175,10 @@ export function ApplicationForm({locale}: ApplicationFormProps) {
 
           <div className="relative z-10">
             <FileDropzone
-              accept=".zip"
+              accept={isWorkshop ? ".zip" : ".pdf"}
               onFile={handleAppFile}
               error={appFileError ?? (result?.fieldErrors?.applicationFile ? t("required") : null)}
-              label={t("fileUpload")}
+              label={isWorkshop ? t("fileUpload") : t("fileUploadSchool")}
               hint={isWorkshop ? t("fileUploadWorkshopHint") : t("fileUploadSchoolHint")}
               dropText={t("dropzoneText")}
               dropActiveText={t("dropzoneActive")}

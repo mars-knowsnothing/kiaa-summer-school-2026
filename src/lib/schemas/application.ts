@@ -3,7 +3,7 @@ import {z} from "zod";
 export const applicationTypes = ["school_only", "school_and_workshop"] as const;
 export type ApplicationType = (typeof applicationTypes)[number];
 
-const SCHOOL_ONLY_FILENAME_RE = /^暑期学校申请材料-.+-.+\.zip$/;
+const SCHOOL_ONLY_FILENAME_RE = /^暑期学校申请材料-.+-.+\.pdf$/;
 const WORKSHOP_FILENAME_RE = /^暑期学校和讨论班申请材料-.+-.+\.zip$/;
 const REFEREE_FILENAME_RE = /^讨论班-.+-.+\.(zip|pdf)$/i;
 

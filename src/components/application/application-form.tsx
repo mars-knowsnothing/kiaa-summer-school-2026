@@ -194,18 +194,14 @@ export function ApplicationForm({locale}: ApplicationFormProps) {
                 transition={{duration: 0.2}}
                 className="relative z-10 space-y-6 overflow-hidden"
               >
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <TextInput name="refereeName" label={t("refereeName")} required error={result?.fieldErrors?.refereeName} />
-                  <TextInput
-                    name="refereeEmail"
-                    label={t("refereeEmail")}
-                    type="email"
-                    hint={t("refereeEmailHint")}
-                    hintClassName="text-xs font-medium text-amber-400"
-                    required
-                    error={result?.fieldErrors?.refereeEmail}
-                  />
-                </div>
+                <TextInput
+                  name="refereeName"
+                  label={t("refereeName")}
+                  hint={t("refereeNameHint")}
+                  hintClassName="text-xs font-medium text-amber-400"
+                  required
+                  error={result?.fieldErrors?.refereeName}
+                />
 
                 <FileDropzone
                   accept=".zip,.pdf"

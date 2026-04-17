@@ -40,7 +40,6 @@ export const schoolAndWorkshopSchema = z.object({
   ...baseFields,
   applicationType: z.literal("school_and_workshop"),
   refereeName: z.string().trim().min(1),
-  refereeEmail: z.string().trim().email(),
 });
 
 export type SchoolAndWorkshopInput = z.infer<typeof schoolAndWorkshopSchema>;

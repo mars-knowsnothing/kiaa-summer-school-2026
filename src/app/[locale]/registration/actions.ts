@@ -27,7 +27,6 @@ export async function submitRegistration(
     isHalal: formData.get("isHalal") === "true",
     hotelNeeded: formData.get("hotelNeeded") === "true",
     refereeName: formData.get("refereeName") ?? undefined,
-    refereeEmail: formData.get("refereeEmail") ?? undefined,
   };
 
   const result = applicationSchema.safeParse(raw);
@@ -103,7 +102,6 @@ export async function submitRegistration(
 
   if (data.applicationType === "school_and_workshop") {
     jsonData.referee_name = data.refereeName;
-    jsonData.referee_email = data.refereeEmail;
   }
 
   const {data: inserted, error: insertError} = await supabase
@@ -130,7 +128,6 @@ export async function submitRegistration(
     const {error: recError} = await supabase.from("recommendations").insert({
       registration_id: inserted.id,
       referee_name: data.refereeName,
-      referee_email: data.refereeEmail,
       status: "pending",
     });
 

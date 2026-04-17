@@ -61,7 +61,7 @@ export default async function LocaleHomePage({params}: LocalePageProps) {
                     <span
                       key={i}
                       className={`block text-2xl sm:text-3xl lg:text-4xl xl:text-[2.8rem] ${
-                        i === 0 ? "" : i === arr.length - 1 ? "mt-3 text-white/65" : "mt-3 text-white/80"
+                        i === 0 ? "" : i === arr.length - 1 ? "mt-3 text-lg sm:text-xl lg:text-2xl xl:text-[1.7rem] text-white/65" : "mt-3 text-white/80"
                       }`}
                     >
                       {line}

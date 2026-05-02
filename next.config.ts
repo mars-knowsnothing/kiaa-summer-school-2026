@@ -10,8 +10,10 @@ const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: path.resolve(configDir),
   reactStrictMode: true,
-  serverActions: {
-    bodySizeLimit: "20mb"
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "20mb"
+    }
   }
 };
 

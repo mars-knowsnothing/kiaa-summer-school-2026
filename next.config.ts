@@ -9,7 +9,10 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: path.resolve(configDir),
-  reactStrictMode: true
+  reactStrictMode: true,
+  serverActions: {
+    bodySizeLimit: "20mb"
+  }
 };
 
 export default withNextIntl(nextConfig);

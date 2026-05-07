@@ -70,12 +70,36 @@ export const agendaSchool: AgendaSchool = {
       affiliation: { en: "Peking University", zh: "北京大学" }
     },
     {
+      name: { en: "Min Fang", zh: "房敏" },
+      affiliation: { en: "Purple Mountain Observatory", zh: "紫金山天文台" }
+    },
+    {
+      name: { en: "Pinghui Huang", zh: "黄平辉" },
+      affiliation: { en: "Purple Mountain Observatory", zh: "紫金山天文台" }
+    },
+    {
+      name: { en: "Sheng Jin", zh: "晋升" },
+      affiliation: { en: "Anhui Normal University", zh: "安徽师范大学" }
+    },
+    {
+      name: { en: "Yaping Li", zh: "李亚平" },
+      affiliation: { en: "Shanghai Astronomical Observatory", zh: "上海天文台" }
+    },
+    {
       name: { en: "Shangfei Liu", zh: "刘尚飞" },
       affiliation: { en: "Sun Yat-sen University", zh: "中山大学" }
     },
     {
+      name: { en: "Yao Liu", zh: "刘尧" },
+      affiliation: { en: "Southwest Jiaotong University", zh: "西南交通大学" }
+    },
+    {
       name: { en: "Feng Long", zh: "龙凤" },
       affiliation: { en: "Peking University", zh: "北京大学" }
+    },
+    {
+      name: { en: "Yuhiko Aoyama", zh: "青山雄彦" },
+      affiliation: { en: "Sun Yat-sen University", zh: "中山大学" }
     },
     {
       name: { en: "Bin Ren", zh: "任彬" },
@@ -86,11 +110,15 @@ export const agendaSchool: AgendaSchool = {
       affiliation: { en: "Peking University", zh: "北京大学" }
     },
     {
+      name: { en: "Su Wang", zh: "王素" },
+      affiliation: { en: "Purple Mountain Observatory", zh: "紫金山天文台" }
+    },
+    {
       name: { en: "Haifeng Yang", zh: "杨海峰" },
       affiliation: { en: "Zhejiang University", zh: "浙江大学" }
     },
     {
-      name: { en: "Yuhiko Aoyama", zh: "Aoyama Yuhiko" },
+      name: { en: "Cong Yu", zh: "余聪" },
       affiliation: { en: "Sun Yat-sen University", zh: "中山大学" }
     }
   ]
